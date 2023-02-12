@@ -2,12 +2,128 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>My First Parcel App</title>
+    <title>AP Lit Group Organizer</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/sharp-solid.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" integrity="sha512-Ef5r/bdKQ7JAmVBbTgivSgg3RM+SLRjwU0cAgySwTSv4+jYcVeDukMp+9lZGWT78T4vCUxgT3g+E8t7uabwRuw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="app.js"></script>
   </head>
   <body>
-    <h1>Hello, Parcel!</h1>
-    <p>This is a vanilla web app built with Parcel 2!<br>Check out the <a href="https://parceljs.org/getting-started/webapp/" target="_blank">getting started guide</a> and the <a href="https://parceljs.org/docs/" target="_blank">documentation</a> to learn more!</p>
+    <div id="ptvals" class="w3-left-align">
+    <p class="c2"><span class="c10"></span></p><a id="t.7c7ce3a2e097272e6bad93867173037319101133"></a><a id="t.0"></a>
+    <h3>Point Values:</h3>
+    <table style="width: auto"class="c12">
+        <tr class="c3">
+            <td class="c8" colspan="1" rowspan="1">
+                <p class="c5"><span class="c0">1</span></p>
+            </td>
+            <td class="c9" colspan="1" rowspan="1">
+                <p class="c1"><span class="c0">Easy and Quick Job: Typically would take less than 30 minutes to complete. </span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c14" colspan="1" rowspan="1">
+                <p class="c5"><span class="c0">2</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c1"><span class="c0">Moderate: Job that would take approximately an hour to complete.</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c5"><span class="c0">3</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c1"><span class="c0">Hard Job: A job with several responsibilities that would typically take more than one hour to 3 hours to complete.</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c13" colspan="1" rowspan="1">
+                <p class="c5"><span class="c0">4</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c1"><span class="c0">Intensive Job: This is a huge responsibility that would typically take 3 to 5+ hours to complete.</span></p>
+            </td>
+        </tr>
+    </table>
+  
+    <p class="c2"><span class="c0"></span></p>
+    <p class="c2"><span class="c0"></span></p>
+      </div>
+      <script>
+        function makeEditable(table) {
+          for (var i = 1; i < table.rows.length; i++) {
+            for (var j = 0; j < table.rows[i].cells.length; j++) {
+              table.rows[i].cells[j].contentEditable = "true";
+            }
+          }
+        }
+      </script>
+    </head>
+    <body>
+      <div class="w3-row w3-center">
+        <div class="w3-center w3-col s12 m6 l8">
+          <table id="myTable" class="w3-table-all w3-card-4">
+        <thead>
+          <tr class="w3-light-grey">
+            <th>Task</th>
+            <th>Value</th>
+            <th>Assigned to</th>
+            <th>Progress</th>
+            <th>Points Recieved</th>
+            <th>Verification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Row 1, Column 1</td>
+            <td>Row 1, Column 2</td>
+            <td>Row 1, Column 3</td>
+            <td>Row 1, Column 4</td>
+            <td>Row 1, Column 5</td>
+            <td>Row 1, Column 6</td>
+          </tr>
+          <tr>
+            <td>Row 2, Column 1</td>
+            <td>Row 2, Column 2</td>
+            <td>Row 2, Column 3</td>
+            <td>Row 2, Column 4</td>
+            <td>Row 2, Column 5</td>
+            <td>Row 2, Column 6</td>
+          </tr>
+          <tr>
+            <td>Row 3, Column 1</td>
+            <td>Row 3, Column 2</td>
+            <td>Row 3, Column 3</td>
+            <td>Row 3, Column 4</td>
+            <td>Row 3, Column 5</td>
+            <td>Row 3, Column 6</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+      </div>
+      
+      <script>
+        makeEditable(document.getElementById("myTable"));
+      </script>
+    <div class="footer">
+      <h5>Built by Graeme Kieran using <a href="https://reactjs.org/"><i class="fa-brands fa-react"></i></a>, <a href="https://fontawesome.com/"><i class="fa-solid fa-font-awesome"></i></a>, <a href="https://jquery.com/"><i class="fa-solid fa-signal-stream"></i></a>, <a href="https://www.w3schools.com/w3css/defaulT.asp"><i class="fa-brands fa-css3"></i></a></h5>
+      <h5>Hosted By <a href="https://github.com"><i class="fa-brands fa-github"></i></a>, Deployed with <a href="https://vercel.com/"><i class="fa-solid fa-circle-caret-up"></i></a></h5>
+      <div class="w3-row">
+          <h6 style="font-size: 10px">Copyright 2023 Graeme Kieran</h6>
+
+    
+       
+      <a style="font-size: 10px; margin-top: 0px" href="https://gkieran.github.io">Homepage</a>
+      <a style="font-size: 10px; margin-top: 0px" href="https://gkieran.github.io/projects">Other Projects</a>
+      <a style="font-size: 10px; margin-top: 0px" href="https://gkieran.github.io/basedgaming">Definitely not unblocked games</a>
+      
+  </div>
+  </div>
+  
   </body>
 </html>
