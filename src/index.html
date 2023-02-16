@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+  <script type="text/javascript">console.log('index.html check 1: %cpassed', 'color: green');
+  </script>
   <head>
     <meta charset="utf-8"/>
     <title>AP Lit Group Organizer</title>
@@ -11,48 +13,94 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" integrity="sha512-Ef5r/bdKQ7JAmVBbTgivSgg3RM+SLRjwU0cAgySwTSv4+jYcVeDukMp+9lZGWT78T4vCUxgT3g+E8t7uabwRuw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="app.js"></script>
   </head>
-  <body>
-    <div id="ptvals" class="w3-left-align">
-    <p class="c2"><span class="c10"></span></p><a id="t.7c7ce3a2e097272e6bad93867173037319101133"></a><a id="t.0"></a>
-    <h3>Point Values:</h3>
-    <table style="width: auto"class="c12">
-        <tr class="c3">
-            <td class="c8" colspan="1" rowspan="1">
-                <p class="c5"><span class="c0">1</span></p>
-            </td>
-            <td class="c9" colspan="1" rowspan="1">
-                <p class="c1"><span class="c0">Easy and Quick Job: Typically would take less than 30 minutes to complete. </span></p>
-            </td>
-        </tr>
-        <tr class="c3">
-            <td class="c14" colspan="1" rowspan="1">
-                <p class="c5"><span class="c0">2</span></p>
-            </td>
-            <td class="c7" colspan="1" rowspan="1">
-                <p class="c1"><span class="c0">Moderate: Job that would take approximately an hour to complete.</span></p>
-            </td>
-        </tr>
-        <tr class="c3">
-            <td class="c4" colspan="1" rowspan="1">
-                <p class="c5"><span class="c0">3</span></p>
-            </td>
-            <td class="c11" colspan="1" rowspan="1">
-                <p class="c1"><span class="c0">Hard Job: A job with several responsibilities that would typically take more than one hour to 3 hours to complete.</span></p>
-            </td>
-        </tr>
-        <tr class="c3">
-            <td class="c13" colspan="1" rowspan="1">
-                <p class="c5"><span class="c0">4</span></p>
-            </td>
-            <td class="c15" colspan="1" rowspan="1">
-                <p class="c1"><span class="c0">Intensive Job: This is a huge responsibility that would typically take 3 to 5+ hours to complete.</span></p>
-            </td>
-        </tr>
-    </table>
   
-    <p class="c2"><span class="c0"></span></p>
-    <p class="c2"><span class="c0"></span></p>
+  <body>
+    <div id='usemodal'class="w3-modal">
+      <div class="w3-modal-content">
+        <span id="closeusage"class="w3-button w3-display-topright">&times;</span>
+        <h2>Usage</h2>
+        <div class="list w3-left-align">
+          <ul>
+            <li>Add Members to group using the dialog</li>
+            <li>Add tasks to table (task cells are editable)</li>
+            <li>select task difficulty</li>
+            <li>update completion as you go</li>
+            <li>star this project on github (very important)</li>
+          </ul>
+        </div>
       </div>
+    </div>
+    <div id='infomodal'class="w3-modal">
+      <div class="w3-modal-content">
+        <span id="closeinfo"class="w3-button w3-display-topright">&times;</span>
+        <h2>Info</h2>
+        <h4>Web app built using Parcel, W3.css, jQuery, and FontAwesome (and a little bit of reactJS)</h4>
+        <h4>Planner for group projects designed by Mr. T, brought to life by Graeme K.</h4>
+      </div>
+    </div>
+    <div id='bugsmodal'class="w3-modal">
+      <div class="w3-modal-content">
+        <span id="closebugs"class="w3-button w3-display-topright">&times;</span>
+        <h2>Known Bugs</h2>
+        <h5>please report any issues or bugs you come across <a href="https://github.com/bean-frog/tolentinoapp/issues">here</a></h5>
+        <div class="list w3-left-align">
+          <ul>
+            <li>none rn!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id='soonmodal'class="w3-modal">
+      <div class="w3-modal-content w3-center">
+        <span id="closesoon"class="w3-button w3-display-topright">&times;</span>
+        <h2>Coming Soon/To-Do</h2>
+        <div class="list w3-left-align">
+          <ul>
+          <li>Oauth login (google)</li>
+          <li>save to: cloud, local(.json), cookies</li>
+          <li>Authenticate verification (currently honor system)</li>
+          <li>change table cell background color based on completeness/task difficulty</li>
+          <li>calculate total points a member has</li>
+        </ul>
+        </div>
+        
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="title w3-left-align">AP Lit. Group Organizer</div>
+      <div class="buttons">
+        <a id="usage"href="#">Usage</a>
+        <a id="info" href="#">Info</a>
+        <a id="bugs" href="#">Bugs</a>
+        <a id="soon" href="#">Coming Soon</a>
+      </div>
+    </div>
+    <div class="w3-container">
+      <div class="w3-row">
+        <div class="w3-col" style="width:30%">
+          <div class="add">
+            <div class="newmember panel">
+              <h4>Add Member to group</h4>
+              <input id="addmember"class="addmember" name="addmember" placeholder="type a name here">
+              <button class="submit" id="submitNewMember">Add</button>
+              <button class="clear" id="deleteMembers">Remove all</button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col" style="width:30%">
+          <div class="add">
+            <div class="newmember panel">
+              <h4>Custom Re-check Rate</h4>
+              <h6>in ms, the rate at which calculations are redone,<br>to account for changes</h6>
+              <input id="customrc"class="customrc" name="customrc" placeholder="value in ms">
+              <button class="submit" id="saverc">Save</button>
+              <button class="clear" id="defaultrc">Default</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+      
       <script>
         function makeEditable(table) {
           for (var i = 1; i < table.rows.length; i++) {
@@ -65,7 +113,7 @@
     </head>
     <body>
       <div class="w3-row w3-center">
-        <div class="w3-center w3-col s12 m6 l8">
+        <div class="w3-center w3-col s12 m12 l12">
           <table id="myTable" class="w3-table-all w3-card-4">
         <thead>
           <tr class="w3-light-grey">
@@ -79,28 +127,80 @@
         </thead>
         <tbody>
           <tr>
-            <td>Row 1, Column 1</td>
-            <td>Row 1, Column 2</td>
-            <td>Row 1, Column 3</td>
-            <td>Row 1, Column 4</td>
-            <td>Row 1, Column 5</td>
-            <td>Row 1, Column 6</td>
+            <td style="word-wrap: break-word; white-space:pre-wrap; width:200px"></td>
+            <td class="cell">
+              <div class="dropdown">
+                <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+            <td></td>
+            <td>
+              <div class="dropdown2">
+                <select>
+                  <option value="notstarted">Not Started</option>
+                  <option value="underhalfdone"> < 1/2 done</option>
+                  <option value="overhalfdone">> 1/2 done</option>
+                  <option value="completed">complete</option>
+                </select>
+              </div>
+            </td>
+            <td></td>
+            <td class="verificationcell" id="check1"></td>
           </tr>
           <tr>
-            <td>Row 2, Column 1</td>
-            <td>Row 2, Column 2</td>
-            <td>Row 2, Column 3</td>
-            <td>Row 2, Column 4</td>
-            <td>Row 2, Column 5</td>
-            <td>Row 2, Column 6</td>
+            <td></td>
+            <td class="cell">
+              <div class="dropdown">
+                <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+            <td></td>
+            <td>
+              <div class="dropdown2">
+                <select>
+                  <option value="notstarted">Not Started</option>
+                  <option value="underhalfdone"> < 1/2 done</option>
+                  <option value="overhalfdone">> 1/2 done</option>
+                  <option value="done">done</option>
+                </select>
+              </div>
+            </td>
+            <td></td>
+            <td class="verificationcell"></td>
           </tr>
           <tr>
-            <td>Row 3, Column 1</td>
-            <td>Row 3, Column 2</td>
-            <td>Row 3, Column 3</td>
-            <td>Row 3, Column 4</td>
-            <td>Row 3, Column 5</td>
-            <td>Row 3, Column 6</td>
+            <td></td>
+            <td class="cell">
+              <div class="dropdown">
+                <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+            <td></td>
+            <td><div class="dropdown2">
+              <select>
+                <option value="notstarted">Not Started</option>
+                <option value="underhalfdone"> < 1/2 done</option>
+                <option value="overhalfdone">> 1/2 done</option>
+                <option value="completed">completed</option>
+              </select>
+            </div></td>
+            <td></td>
+            <td class="verificationcell"></td>
           </tr>
         </tbody>
       </table>
@@ -110,20 +210,18 @@
       <script>
         makeEditable(document.getElementById("myTable"));
       </script>
-    <div class="footer">
-      <h5>Built by Graeme Kieran using <a href="https://reactjs.org/"><i class="fa-brands fa-react"></i></a>, <a href="https://fontawesome.com/"><i class="fa-solid fa-font-awesome"></i></a>, <a href="https://jquery.com/"><i class="fa-solid fa-signal-stream"></i></a>, <a href="https://www.w3schools.com/w3css/defaulT.asp"><i class="fa-brands fa-css3"></i></a></h5>
-      <h5>Hosted By <a href="https://github.com"><i class="fa-brands fa-github"></i></a>, Deployed with <a href="https://vercel.com/"><i class="fa-solid fa-circle-caret-up"></i></a></h5>
+      <div style="height:200px"></div>
+    <div class="footer" style="height: 150px">
+      <h5 style="font-size: 15px">Built by Graeme Kieran using <a href="https://reactjs.org/"><i class="fa-brands fa-react"></i></a>, <a href="https://fontawesome.com/"><i class="fa-solid fa-font-awesome"></i></a>, <a href="https://jquery.com/"><i class="fa-solid fa-signal-stream"></i></a>, <a href="https://www.w3schools.com/w3css/defaulT.asp"><i class="fa-brands fa-css3"></i></a></h5>
+      <h5 style="font-size: 15px">Hosted By <a href="https://github.com"><i class="fa-brands fa-github"></i></a>, Deployed with <a href="https://vercel.com/"><i class="fa-solid fa-circle-caret-up"></i></a></h5>
       <div class="w3-row">
-          <h6 style="font-size: 10px">Copyright 2023 Graeme Kieran</h6>
-
-    
-       
+          <h6 style="font-size: 10px">Copyright(ish) 2023 Graeme Kieran</h6>
       <a style="font-size: 10px; margin-top: 0px" href="https://gkieran.github.io">Homepage</a>
-      <a style="font-size: 10px; margin-top: 0px" href="https://gkieran.github.io/projects">Other Projects</a>
-      <a style="font-size: 10px; margin-top: 0px" href="https://gkieran.github.io/basedgaming">Definitely not unblocked games</a>
-      
+      <a style="font-size: 10px; margin-top: 0px" href="https://gkieran.github.io/projects">Other Projects</a>      
   </div>
   </div>
   
   </body>
+  <script type="text/javascript">console.log('index.html check 2: %cpassed', 'color: green');
+  </script>
 </html>
