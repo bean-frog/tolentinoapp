@@ -15,7 +15,7 @@ for (let i = 0; i < rows.length; i++) {
 function addMember() {
     var addmember = document.getElementById("addmember").value;
     var verificationcell = document.getElementsByClassName("verificationcell");
-    if (rcValue !== "") {
+    
        verificationcell.textContent += addmember;
     for (var i = 0; i < verificationcell.length; i++) {
         var checkbox = document.createElement("input");
@@ -23,10 +23,7 @@ function addMember() {
         checkbox.id = "verify";
         verificationcell[i].innerHTML += checkbox.outerHTML + " " + addmember + "<br>";
     } 
-    } else {
-        alert("its not legal to name someone ' ', try again")
-    }
-    
+   
 }
 var submitmember = document.getElementById("submitNewMember");
 submitmember.addEventListener("click", addMember);
@@ -129,4 +126,5 @@ soon.addEventListener('click', function() {
 closesoon.addEventListener('click', function() {
     document.getElementById('soonmodal').style.display='none'
 });
+
 console.log('app.js check 2: %cpassed', 'color: green');
