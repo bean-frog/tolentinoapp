@@ -1,5 +1,10 @@
+:root {
+  --gay-color: purple;
+}
+
 body {
   text-align: center;
+  overflow: scroll;
 }
 
 h1 {
@@ -279,4 +284,45 @@ li {
   color: white;
   text-align: center;
   margin-top: 30px;
+}
+.submit {
+  background-color: #64DD17;
+  border: 2px groove black;
+}
+.clear {
+  background-color: #d50000;
+  border: 2px groove black;
+}
+.panel {
+  background-color: #ECEFF1;
+  border: 1px groove black;
+  height: fit-content;
+  width: fit-content;
+  margin-bottom: 15px;
+  display: inline-block
+}
+.navbar {
+  background-color: #666;
+  height: 30px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  
+}
+.title {
+  color: white;
+  font-size: 24px;
+  letter-spacing: 3px;
+  text-align: left;
+  margin: 0 auto;
+  width: 75%
+}
+.buttons {
+width: 25%;
+text-align: right
 }
